@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"  # This command builds your React frontend
+  functions = "functions"    # If you have serverless functions (optional)
+  publish = "build"          # This is the directory to deploy, adjust if needed
+
+[dev]
+  command = "npm start"      # Command to start your development server locally
+
+[[plugins]]
+  package = "@netlify/plugin-functions-core"  # If you're using serverless functions
+
+[context.production.environment]
+  NODE_ENV = "production"    # Set environment variables for production
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"   # Set environment variables for branch deploys
